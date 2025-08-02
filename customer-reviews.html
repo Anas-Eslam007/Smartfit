@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>آراء العملاء - SmartFit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/customer-reviews.css" />
+  </head>
+  <body>
+    <header>
+      <a href="../index.html" class="logo">SmartFit</a>
+      <nav>
+        <ul>
+          <li><a href="../index.html">الرئيسية</a></li>
+          <li><a href="who-am-i.html">من أنا</a></li>
+          <li><a href="customer-reviews.html" class="active">آراء العملاء</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="reviews-page">
+      <h1>آراء عملائنا</h1>
+            
+      <div class="reviews-container">
+        <div class="review-card">
+          <h3>أحمد</h3>
+          <p>
+            "لقد غيرت سمارت فيت رحلتي الرياضية بالكامل! خطط التدريب المخصصة رائعة حقًا!"
+          </p>
+        </div>
+
+        <div class="review-card">
+          <h3>سارة</h3>
+          <p>
+            "أحب دعم المجتمع ونصائح التغذية. لقد أحدثت فرقًا كبيرًا في صحتي."
+          </p>
+        </div>
+
+        <div class="review-card">
+          <h3>محمد</h3>
+          <p>
+            "المدربون في سمارت فيت على دراية كبيرة ودائمًا على استعداد للمساعدة. أوصي بهم بشدة!"
+          </p>
+        </div>
+
+        <div class="review-card">
+          <h3>نور</h3>
+          <p>
+            "بفضل سمارت فيت، تمكنت من تحقيق أهدافي الرياضية في وقت قياسي. شكرًا لكم!"
+          </p>
+        </div>
+
+        <div class="review-card">
+          <h3>خالد</h3>
+          <p>
+            "النظام الغذائي المخصص سهل المتابعة وفعال للغاية. أنصح الجميع بتجربته."
+          </p>
+        </div>
+
+        <div class="review-card">
+          <h3>لينا</h3>
+          <p>
+            "تجربة رائعة مع فريق سمارت فيت. الدعم المستمر والمتابعة اليومية جعلت الفرق واضحًا."
+          </p>
+        </div>
+
+        <div class="review-card">
+          <h3>عمر</h3>
+          <p>
+            "أفضل استثمار قمت به لصحتي. النتائج تتحدث عن نفسها!"
+          </p>
+        </div>
+
+        <div class="review-card">
+          <h3>ياسمين</h3>
+          <p>
+            "بعد سنوات من المحاولات الفاشلة، وجدت أخيرًا البرنامج المناسب مع سمارت فيت."
+          </p>
+        </div>
+
+        <div class="review-card">
+          <h3>مازن</h3>
+          <p>
+            "التمارين المخصصة سهلة المتابعة حتى للمبتدئين. أنا سعيد جدًا بالنتائج."
+          </p>
+        </div>
+
+        <div class="review-card">
+          <h3>رنا</h3>
+          <p>
+            "فريق احترافي يهتم حقًا بتقدمك. أشعر أن لدي مدرب شخصي معي طوال الوقت."
+          </p>
+        </div>
+
+        <div class="review-card">
+          <h3>وسام</h3>
+          <p>
+            "النظام الغذائي لم يكن قاسيًا على الإطلاق، بل كان متوازنًا ولذيذًا. أنصح الجميع به."
+          </p>
+        </div>
+
+        <div class="review-card">
+          <h3>لمى</h3>
+          <p>
+            "بعد شهرين فقط، لاحظ الجميع الفرق. أشكر سمارت فيت على هذه التجربة الرائعة."
+          </p>
+        </div>
+      </div>
+      
+      <a href="../index.html" class="back-btn">العودة للصفحة الرئيسية</a>
+    </main>
+
+    <script>
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 100,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+      
+      // Add active class to current page link
+      document.addEventListener('DOMContentLoaded', function() {
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        const navLinks = document.querySelectorAll('nav a');
+        
+        navLinks.forEach(link => {
+          const linkHref = link.getAttribute('href');
+          if (linkHref === currentPage || 
+              (currentPage === 'index.html' && linkHref === '../index.html')) {
+            link.classList.add('active');
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

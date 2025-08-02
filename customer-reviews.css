@@ -1,0 +1,269 @@
+@import url("https://fonts.googleapis.com/css2?family=Madimi+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* Base Styles */
+:root {
+  --btn-color: #d32f2f;
+  --btn-hover-color: #d63f3f;
+  --text-color: #000;
+  --text-color-one: #ffffff;
+  --container-padding: 15px;
+  --header-height: 70px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Cairo", sans-serif;
+  margin: 0;
+  padding: var(--container-padding);
+  background-color: black;
+  color: #ffffff;
+  text-transform: capitalize;
+  direction: rtl;
+  overflow-x: hidden;
+}
+
+/* Header Styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  height: var(--header-height);
+  margin: 0 auto 30px;
+  padding: 0 20px;
+  border-radius: 15px;
+  position: sticky;
+  top: 15px;
+  z-index: 1000;
+  color: var(--text-color);
+  background-color: rgb(255, 255, 255);
+  box-shadow: #ffffff 0px 0px 6px;
+  animation: floatUpDown 3s ease-in-out infinite;
+}
+
+.logo {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 10px;
+  white-space: nowrap;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 15px;
+}
+
+nav li a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1rem;
+  background-color: white;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  padding: 8px 15px;
+  white-space: nowrap;
+}
+
+nav li a:hover {
+  background-color: #d6d6d6;
+  color: var(--text-color);
+}
+
+/* Main Content */
+.reviews-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  width: 100%;
+}
+
+.reviews-page h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--btn-color);
+  animation: floatUpDown 3s ease-in-out infinite;
+}
+
+.reviews-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 2rem;
+}
+
+.review-card {
+  background-color: #1e1e1e;
+  border: 1px solid #444;
+  border-radius: 15px;
+  padding: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: right;
+  direction: rtl;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.review-card h3 {
+  margin: 0 0 15px 0;
+  color: #ff5252;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.review-card p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #ddd;
+  margin: 0;
+}
+
+/* Back Button */
+.back-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  margin: 20px 0 40px;
+  background-color: var(--btn-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 7px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  border: 2px solid var(--btn-color);
+}
+
+.back-btn:hover {
+  background-color: transparent;
+  color: var(--btn-color);
+}
+
+/* Animations */
+@keyframes floatUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .reviews-container {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+  
+  .reviews-page h1 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    height: auto;
+    padding: 15px;
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  .logo {
+    margin-bottom: 10px;
+  }
+  
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  nav li a {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+  
+  .reviews-page h1 {
+    font-size: 2rem;
+  }
+  
+  .review-card h3 {
+    font-size: 1.3rem;
+  }
+  
+  .review-card p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --container-padding: 10px;
+    --header-height: auto;
+  }
+  
+  .reviews-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .reviews-page h1 {
+    font-size: 1.8rem;
+  }
+  
+  .review-card {
+    padding: 20px;
+  }
+  
+  .back-btn {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background-color: white;
+    color: black;
+    padding: 0;
+  }
+  
+  header, .back-btn {
+    display: none;
+  }
+  
+  .reviews-page {
+    padding: 10px;
+  }
+  
+  .review-card {
+    page-break-inside: avoid;
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+  }
+  
+  .review-card h3 {
+    color: #d32f2f;
+  }
+  
+  .review-card p {
+    color: #333;
+  }
+}
